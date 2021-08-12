@@ -8,3 +8,13 @@ ProjectA/.classpath
 ProjectA/.project
 ProjectA/.settings/org.eclipse.jdt.core.prefs
 *.class
+UnitConverter/.classpath
+UnitConverter/.classpath
+UnitConverter/.project
+*.prefs
+*.class
+*.class
+*.class
+UnitConverter/bin/main/Converter.class
+*.class
+UnitConverter/src/module-info.java
