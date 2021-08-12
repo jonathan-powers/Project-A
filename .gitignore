@@ -1,0 +1,14 @@
+
+.metadata/.lock
+*.prefs
+*.ini
+*.xml
+*.check
+.metadata/.plugins/org.eclipse.ui.intro/introstate
+*.properties
+*.setup
+*.json
+*.css
+.metadata/.log
+*.index
+*.log
