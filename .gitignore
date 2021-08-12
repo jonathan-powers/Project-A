@@ -1,0 +1,10 @@
+
+.metadata/.lock
+.metadata/.plugins/com.genuitec.eclipse.monitor/myeclipse-usage.properties
+*.log
+/.metadata/
+*.jar
+ProjectA/.classpath
+ProjectA/.project
+ProjectA/.settings/org.eclipse.jdt.core.prefs
+*.class
