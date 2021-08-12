@@ -12,3 +12,4 @@
 .metadata/.log
 *.index
 *.log
+/.metadata/
