@@ -10,10 +10,6 @@ public class Converter {
 	
 	public static void main(String[] args) {
 		
-		//double conversion[] =  new double[] {101325,1.01325,760,14.6959,1};
-		//contains unit conversion from atmosphere to different units
-		
-		
 		Scanner input = new Scanner(System.in);
 		// create scanner object to collect user inputs
 		
@@ -21,23 +17,23 @@ public class Converter {
 		
 		System.out.println("What is the initial value?");
 		
-		double val = 0;
-		
 		String initvalue = input.nextLine();
 		//gathers user input as string
-
-		val = Double.parseDouble(initvalue);
+		
+		double val = Double.parseDouble(initvalue);
 		// converts value from string to double
 		
 		//System.out.println(val);
 		
 		System.out.println("Select an Initial unit");
 		
-		//String userinput1 = Converter.getunitinput();
+		String userinput1 = input.nextLine();
+		//gets input from user
 		
-		String userinput1 =input.nextLine();
+		initu = Converter.evalunitinput(userinput1);
+		//returns appropriate index for conversion array
 		
-		int initu =-1;
+		/*int initu =-1;
 		
 		switch (userinput1) {
 		case "Pascal":
@@ -59,15 +55,16 @@ public class Converter {
 			System.out.println("Not a valid unit, Please try again\n ");
 			Converter.main(args);
 			break;
-		}
+		}*/
 		
 		System.out.println("Unit to convert to");
 		
-		//String userinput2 = Converter.getunitinput();
-		
 		String userinput2 = input.nextLine();
 		
-		int finu = -1;
+		finu = Converter.evalunitinput(userinput2);
+		//returns appropriate index for conversion array
+		
+		/*int finu = -1;
 		
 		switch (userinput2) {
 		case "Pascal":
@@ -89,21 +86,17 @@ public class Converter {
 			System.out.println("Not a valid unit, Please try again\n ");
 			Converter.main(args);
 			break;
-		}
+		}*/
 		
 		double finvalue = Converter.convert(val,initu,finu);
 		
 		System.out.println(val + " " + userinput1 + " is equal to " + finvalue + " " + userinput2);
-		
-		input.close();
-		
-		
 	}
 	
 	/*public static double convert(double value,String initunit, String finunit) {
 		//method to call if using a map to hold values to convert units
-		
-		return 0.1;
+		double v = value;
+		return v;
 	}*/
 	
 	public static double convert(double value,int initunit, int finunit) {
@@ -120,39 +113,24 @@ public class Converter {
 		return v;
 	}
 	
-	public static String getunitinput() {
-		Scanner input = new Scanner(System.in);
-		
-		String userinput =input.nextLine();
-		
-		input.close();
-		
-		//int initu = -1;
+
+	public static int evalunitinput(String userinput) {
 		
 		switch (userinput) {
 		case "Pascal":
-			initu = 0; 
-			break;
+			return 0; 
 		case "Barr":
-			initu = 1; 
-			break;
+			return 1; 
 		case "PSI":
-			initu = 2;
-			break;
+			return 2;
 		case "Torr":
-			initu = 3;
-			break;
+			return 3;
 		case "Atmosphere":
-			initu = 4;
-			break;
+			return 4;
 		default:
-			System.out.println("Not a valid unit, Please try again");
-			
-			Converter.getunitinput();
-			break;
+			return -1;
 		}
 		
-		return userinput;
 	}
 
 }

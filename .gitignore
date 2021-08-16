@@ -13,3 +13,4 @@
 *.index
 *.log
 /.metadata/
+*.class
